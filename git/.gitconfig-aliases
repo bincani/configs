@@ -1,0 +1,8 @@
+# git aliases
+# https://git.wiki.kernel.org/index.php/Aliases
+[alias]
+  # list branches
+  lb = !"for k in `git branch -a|perl -pe s/^..//`;do echo `git show --pretty=format:\"%Cgreen%ci %Cblue%cr%Creset\" $k|head -n 1`\\\t$k;done|sort"
+  # list ignored files
+  ignored = !git ls-files -v | grep "^[[:lower:]]"
+
